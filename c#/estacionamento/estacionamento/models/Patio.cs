@@ -89,5 +89,27 @@ public class Patio {
 
         return informacao;
     }
-    
+
+    public Veiculo? PesquisarVeiculo(string placa)
+    {
+        Veiculo? encontrado = (from veiculo in this.Veiculos
+            where veiculo.Placa == placa
+            select veiculo).SingleOrDefault();
+        
+        return encontrado != null ? encontrado : null;
+    }
+
+    public Veiculo? AlterarDadosVeiculo(Veiculo veiculoAlterado)
+    {
+        Veiculo? encontrado = (from veiculo in this.Veiculos
+            where veiculo.Placa == veiculoAlterado.Placa
+            select veiculo).SingleOrDefault();
+        if (encontrado != null)
+        {
+            encontrado.AlterarDados(veiculoAlterado);
+            return encontrado;
+        }
+
+        return null;
+    }
 }

@@ -89,4 +89,11 @@ public class Veiculo
         {
            Proprietario = proprietario;
         }
+
+        public void AlterarDados(Veiculo veiculoAlterado)
+        {
+            Proprietario = veiculoAlterado.Proprietario;
+            Cor = veiculoAlterado.Cor;
+            Modelo = veiculoAlterado.Modelo;
+        }
 }

@@ -4,7 +4,8 @@ namespace estacionamento_teste;
 
 public class VeiculoTestes
 {   
-    [Fact]
+    [Fact(DisplayName = "Testa o metodo acelerar do veiculo")]
+    [Trait("Funcionalidade", "Acelerar")] //TODO AGRUPA OS TESTE UTILIZANDO CHAVE E VALOR
     public void TestaVeiculoAcelerar()
     {
         //Arrange
@@ -17,7 +18,8 @@ public class VeiculoTestes
         Assert.Equal(100, veiculo.VelocidadeAtual);
     }
     
-    [Fact]
+    [Fact(DisplayName = "Testa o metodo frear do veiculo")]
+    [Trait("Funcionalidade", "Frear")]
     public void TestaVeiculoFrear()
     {
         //Arrange
@@ -30,7 +32,7 @@ public class VeiculoTestes
         Assert.Equal(-150, veiculo.VelocidadeAtual);
     }
     
-    [Fact]
+    [Fact(DisplayName = "Valida se o tipo do veiculo é null")]
     public void TestaVeiculoTipoVeiculoCasoSejaNull()
     {
         //Arrange
@@ -43,7 +45,7 @@ public class VeiculoTestes
         Assert.Equal(TipoVeiculo.Automovel, veiculo.Tipo);
     }
     
-    [Fact]
+    [Fact(DisplayName = "Valida se o tipo do veiculo foi passado")]
     public void TestaVeiculoTipoVeiculoCasoOvalorSejaPassado()
     {
         //Arrange
