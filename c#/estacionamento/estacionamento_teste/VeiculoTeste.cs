@@ -57,5 +57,23 @@ public class VeiculoTestes
         //Assert
         Assert.Equal(TipoVeiculo.Motocicleta, veiculo.Tipo);
     }
+
+    [Fact(DisplayName = "Testar se a ficha do veiculo está funcionando corretamente")]
+    public void TestarDadosFichaVeiculo()
+    {
+        //Arrange
+        Veiculo carro = new Veiculo();
+        carro.Proprietario = "Wesley";
+        carro.Tipo = TipoVeiculo.Automovel;
+        carro.Cor = "Vermelho";
+        carro.Modelo = "Ferrari";
+        carro.Placa = "ABC-9999";
+        
+        //Act
+        string dadosFicha = carro.ToString();
+        
+        //Assert 
+        Assert.Contains("Ficha do Veiculo:", dadosFicha);
+    }
     
 }

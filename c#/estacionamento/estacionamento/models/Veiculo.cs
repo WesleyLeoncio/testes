@@ -7,6 +7,7 @@ public class Veiculo
         private string _proprietario;
         private TipoVeiculo _tipo;
      
+        
         //Propriedades   
 
         public string? Placa
@@ -95,5 +96,15 @@ public class Veiculo
             Proprietario = veiculoAlterado.Proprietario;
             Cor = veiculoAlterado.Cor;
             Modelo = veiculoAlterado.Modelo;
+        }
+
+        public override string ToString()
+        {
+            return $"Ficha do Veiculo:\n "+
+                   $"Tipo do Veiculo: {Tipo.ToString()} \n"+
+                   $"Proprietário:  {Proprietario}\n"+
+                   $"Modelo: {Modelo}\n"+
+                   $"Cor: {Cor}\n"+
+                   $"Placa: {Placa}\n";
         }
 }
